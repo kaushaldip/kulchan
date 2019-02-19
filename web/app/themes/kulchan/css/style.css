@@ -266,13 +266,13 @@ body {
     font-weight: 100;
 }
 input:focus, textarea:focus {
-	border-color: #606060;
+    border-color: #606060;
 }
-h1, 
-h2, 
-h3, 
-h4, 
-h3, 
+h1,
+h2,
+h3,
+h4,
+h3,
 h5,
 h6 {
     clear: both;
@@ -344,14 +344,14 @@ a {
     color: #505050;
     background-color: transparent;
 }
-a:hover, 
-a:focus, 
+a:hover,
+a:focus,
 a:active {
     color: #202020;
     text-decoration: none;
 }
 a:focus,
-a:hover, 
+a:hover,
 a:active {
     outline: none;
 }
@@ -359,7 +359,7 @@ a:active {
 /*--------------------------------------------------------------
 Transition
 --------------------------------------------------------------*/
-a, input, select, textarea, 
+a, input, select, textarea,
 .t-btn, .single-main-feature,
 .feature-icon:before, .feature-icon {
     -webkit-transition: all 0.3s ease;
@@ -561,7 +561,7 @@ Home Section
     content: '';
     position: absolute;
     /*background: linear-gradient(-159deg, #1367e1, #824ae1);*/
-     background: #000;
+    background: #000;
     width: 100%;
     height: 100%;
     /*opacity: 0.95;*/
@@ -620,34 +620,34 @@ Home Section
 }
 
 .say-hello-txt span a:before{
-  -webkit-animation-duration: 1s;
-  animation-duration: 1s;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  -webkit-animation-timing-function: linear;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-  -webkit-animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
 }
 @-webkit-keyframes bounce {
-  0%, 100% {
-    -webkit-transform: translateY(0);
-  }
-  50% {
-    -webkit-transform: translateY(15px);
-  }
+    0%, 100% {
+        -webkit-transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(15px);
+    }
 }
 @keyframes bounce {
-  0%, 100% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(15px);
-  }
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(15px);
+    }
 }
 .say-hello-txt span a:before {
-  -webkit-animation-name: bounce;
-  animation-name: bounce;
+    -webkit-animation-name: bounce;
+    animation-name: bounce;
 }
 
 
@@ -788,7 +788,7 @@ Colloborate
 }
 
 
-.lets-get-started-btn a{
+.lets-get-started-btn input{
     border-radius: 50px;
     background: #fc9823;
     text-transform: uppercase;
@@ -799,7 +799,7 @@ Colloborate
     margin-top: 30px;
 }
 
-.lets-get-started-btn a:hover{
+.lets-get-started-btn input:hover{
     background: #fff;
     color: #fc9823;
 }
@@ -863,9 +863,9 @@ portfolio
     left: 0;
     height: 100%;
     width: 100%;
-    background: -moz-linear-gradient(-45deg, rgba(130,74,225,0) 1%, rgba(130,74,225,0.56) 56%, rgba(19,103,225,1) 100%);
-    background: -webkit-linear-gradient(-45deg, rgba(130,74,225,0) 1%,rgba(130,74,225,0.56) 56%,rgba(19,103,225,1) 100%);
-    background: linear-gradient(135deg, rgba(130,74,225,0) 1%,rgba(130,74,225,0.56) 56%,rgba(19,103,225,1) 100%);
+    background: -moz-linear-gradient(-45deg, rgba(99, 45, 191, 0.59) 1%,rgba(84, 34, 169, 0.56) 56%,rgba(19,103,225,1) 100%);
+    background: -webkit-linear-gradient(-45deg, rgba(99, 45, 191, 0.59) 1%,rgba(84, 34, 169, 0.56) 56%,rgba(19,103,225,1) 100%);
+    background: linear-gradient(135deg, rgba(99, 45, 191, 0.59) 1%,rgba(84, 34, 169, 0.56) 56%,rgba(19,103,225,1) 100%);
     /*opacity: 0.7;*/
     display: none;
     z-index: 9;
@@ -1023,7 +1023,7 @@ contact
     opacity: 0.5;
 }
 .kulchan-conta textarea.form-control {
-  height: 100px;
+    height: 100px;
 }
 /*--------------------------------------------------------------
 contact
@@ -1086,6 +1086,25 @@ input.error#result {
     color:#006CDC;
 }
 .bottom-footer a:last-child:after { color: transparent;}
+.navbar-default .navbar-nav>li>a:focus, .navbar-default .navbar-nav>li>a:hover{
+    color: #ffffff;
+}
+div.wpcf7 .screen-reader-response {
+    height:0px;
+}
+div.wpcf7 .screen-reader-response{
+    margin: 0 auto;
+    padding: 0;
+    border: 0;
+    text-align: center;
+    color: green;
+    background: #fff;
+    position: static;
+    width: 100%;
+    max-width: 800px;
+    height: auto;
+}
+
 /*--------------------------------------------------------------
 footer
 --------------------------------------------------------------*/
@@ -1095,27 +1114,27 @@ media query
 --------------------------------------------------------------*/
 @media screen and (max-width: 768px){
     .navbar-default .navbar-nav>li>a {
-    margin: 0 10px;
+        margin: 0 10px;
     }
     .stp span:before {
-    background: none;
-    left: 0px;
+        background: none;
+        left: 0px;
     }
     .em-ph {
-    float: none;
-    text-align: center;
+        float: none;
+        text-align: center;
     }
     .ban-btm .social {
-    float: none;
-    text-align: center;
+        float: none;
+        text-align: center;
     }
 }
 @media screen and (max-width: 768px){
     .say-hello-txt {
-    margin-bottom: 120px;
+        margin-bottom: 120px;
     }
     .em-ph ul li {
-    padding: 0px 25px 7px 0px;
+        padding: 0px 25px 7px 0px;
     }
 }
 /*--------------------------------------------------------------

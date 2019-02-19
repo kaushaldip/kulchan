@@ -1,3 +1,116 @@
+function isValidEmailAddress(emailAddress) {
+    var pattern = new RegExp(/^(("[\w-+\s]+")|([\w-+]+(?:\.[\w-+]+)*)|("[\w-+\s]+")([\w-+]+(?:\.[\w-+]+)*))(@((?:[\w-+]+\.)*\w[\w-+]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][\d]\.|1[\d]{2}\.|[\d]{1,2}\.))((25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\.){2}(25[0-5]|2[0-4][\d]|1[\d]{2}|[\d]{1,2})\]?$)/i);
+    return pattern.test(emailAddress);
+}
+$(document).ready(function(){
+    $('.testi-slider').owlCarousel({
+        margin:25,
+        loop:true,
+        autoWidth:false,
+
+        nav : false,
+        navText : ["<img src='"+script_wp_vars.themeurl+"/images/owl-perv.png'>","<img src='"+script_wp_vars.themeurl+"/images/owl-nxt.png'>"],
+        autoplayTimeout: 10000,
+        smartSpeed: 450,
+        dots:true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 2
+            },
+            1170: {
+                items: 3
+            }
+        }
+    });
+
+
+
+    $('.subscribe-btn').click(function(e){
+        e.preventDefault();
+        $(this).prop('disabled', true);
+        var email1=$('input.subscribe_email').val();
+
+        if (isValidEmailAddress(email1)) {
+            // $('input.sub-email.top-form').removeClass('error');
+            // $('.top-form.validate-error').addClass('hidden');
+
+            $.post( script_wp_vars.ajaxurl,{ action:'suscribe_handle',email: email1 }, function( data ) {
+                if(data=='success'){
+                    $('.top-form.success').removeClass('hidden').delay(10000).fadeOut();
+                    $('.subscribe-btn').prop('disabled', false);
+                    $('input.subscribe_email').val("");
+                }
+                else{
+                    $('.subscribe-btn').prop('disabled', false);
+                    $('.subscribe-btn').prop('disabled', false);
+                }
+            });
+
+        }
+        else
+        {
+            $('input.subscribe_email').addClass('error');
+
+            $(this).prop('disabled', false);
+
+        }
+    });
+
+});
+$(document).ready(function(){
+    $('.prot-slider').owlCarousel({
+        margin:0,
+        loop:true,
+        autoWidth:true,
+        nav : true,
+        navText : ["<img src='"+script_wp_vars.themeurl+"/images/owl-perv.png'>","<img src='"+script_wp_vars.themeurl+"/images/owl-nxt.png'>"],
+        autoplayTimeout: 10000,
+        smartSpeed: 450,
+        dots:false,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 2
+            },
+            1170: {
+                items: 3
+            }
+        }
+    });
+});
+
+$(document).ready(function(){
+    $('.team-slider').owlCarousel({
+        margin:0,
+        loop:true,
+        autoWidth:false,
+
+        nav : false,
+        navText : ["<img src='"+script_wp_vars.themeurl+"/images/owl-perv.png'>","<img src='"+script_wp_vars.themeurl+"/images/owl-nxt.png'>"],
+        autoplayTimeout: 10000,
+        smartSpeed: 450,
+        dots:true,
+        responsive: {
+            0: {
+                items: 1
+            },
+            768: {
+                items: 2
+            },
+            1170: {
+                items: 3
+            },
+            1470: {
+                items: 4
+            }
+        }
+    });
+});
 (function($) {
 
 	"use strict";
@@ -293,24 +406,15 @@
 
 	function magnificPopupSetup() {
 
-		$('.zoom-gallery').magnificPopup({
-			delegate: 'a',
-			type: 'image',
-			closeOnContentClick: false,
-			closeBtnInside: false,
-			mainClass: 'mfp-with-zoom mfp-img-mobile',
-			gallery: {
-				enabled: true
-			},
-			zoom: {
-				enabled: true,
-				duration: 300, // don't foget to change the duration also in CSS
-				opener: function(element) {
-					return element.find('img');
-				}
-			}
-					
-		});
+        $('.image-popup-vertical-fit').magnificPopup({
+            type: 'image',
+            closeOnContentClick: true,
+            mainClass: 'mfp-img-mobile',
+            image: {
+                verticalFit: true
+            }
+
+        });
 			
 	}
 
